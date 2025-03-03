@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// URL уже существующего сервиса (например, запущенного на localhost:8080)
-	targetURL, err := url.Parse("http://localhost:8080")
+	targetURL, err := url.Parse("http://tasks-service:8080")
 	if err != nil {
 		log.Fatalf("Неверный URL: %v", err)
 	}

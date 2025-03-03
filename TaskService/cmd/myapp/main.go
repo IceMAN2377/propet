@@ -3,12 +3,13 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/IceMAN2377/appl/internal/handlers"
 )
 
 func main() {
-	connStr := "postgres://postgres:mypassword@localhost:5432/psdb?sslmode=disable"
+	connStr := os.Getenv("DB_CONN")
 	if err := handlers.InitDB(connStr); err != nil {
 		log.Fatalf("Failed to connect to DB: %v", err)
 	}
